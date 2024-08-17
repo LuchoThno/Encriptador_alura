@@ -1,4 +1,5 @@
 const CLAVE = 'abcdefghijklmnopqrstuvwxyz';
+const CLAVE = 'abcdefghijklmnopqrstuvwxyz';
 
 const formularioEncriptar = document.getElementById('formulario-encriptar');
 const formularioDesencriptar = document.getElementById('formulario-desencriptar');
@@ -39,4 +40,24 @@ function desencriptarMensaje(mensaje) {
         return caracter;
     }
     }).join('');
+}
+document.getElementById('copiar-encriptado').addEventListener('click', function() {
+    copiarTexto('mensaje-encriptado');
+});
+
+document.getElementById('copiar-desencriptado').addEventListener('click', function() {
+    copiarTexto('mensaje-desencriptado');
+});
+
+function copiarTexto(idTextarea) {
+    const textarea = document.getElementById(idTextarea);
+    textarea.select();
+    textarea.setSelectionRange(0, 99999); // Para móviles
+
+    try {
+        document.execCommand('copy');
+        alert('Texto copiado al portapapeles');
+    } catch (err) {
+        alert('Error al copiar el texto');
+    }
 }
