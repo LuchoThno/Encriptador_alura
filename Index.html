@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de mensajes</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Encriptador de mensajes</h1>
-    </header>
+<body style="background-image: url(./Imagen/fondo1.jpg);background-size: cover; background-position: center;">
+    <h1 class="bungee-tint-regular">Encriptador de mensajes</h1>
     <main>
         <div class="formulario-horizontal">
             <section class="formulario_estandar">
@@ -22,6 +23,7 @@
             <section class="formulario_estandar">
                 <h2>Mensaje encriptado:</h2>
                 <textarea id="mensaje-encriptado" rows="5" cols="30" readonly></textarea>
+                <button id="copiar-encriptado">Copiar</button>
             </section>
         </div>
         <div class="formulario-horizontal">
@@ -35,6 +37,7 @@
             <section class="formulario_estandar">
                 <h2>Mensaje desencriptado:</h2>
                 <textarea id="mensaje-desencriptado" rows="5" cols="30" readonly></textarea>
+                <button id="copiar-desencriptado">Copiar</button>
             </section>
         </div>
     </main>
