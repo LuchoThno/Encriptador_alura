@@ -1,78 +1,115 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-  font-family: 'Verdana', sans-serif;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Altura de la página */
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-  font-family: 'Bungee Tint', cursive;
-  color: azure;
-  margin-bottom: 1em;
+    font-family: 'Bungee Tint', cursive;
+    text-align:center;
+    color: azure;
+    margin-bottom: 1em;
 }
 
 h2 {
-  font-weight: 300;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-bottom: 0.5em;
+    font-weight: 300;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 0.5em;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2em;
-  max-width: 800px;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    padding: 2em;
+    width: 100%;
 }
 
 .formulario-horizontal {
-  background-color: #f7f7f7;
-  border: 1px solid #ddd;
-  margin-bottom: 1em;
-  display: flex;
-  justify-content: space-between; /* Alinea los elementos horizontalmente */
-  align-items: flex-start;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos horizontalmente */
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .formulario_estandar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 48%; /* Ajuste del ancho para que los dos formularios se alineen correctamente */
+    display: flex;
+    flex-direction: column; /* Alinear elementos verticalmente */
+    justify-content: safe center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    width: 48%;
 }
 
 textarea {
-  border: 2px solid #ccc;
-  padding: 10px;
-  width: 100%;
-  resize: none;
-  overflow: auto;
-  margin-bottom: 10px;
+    border: 2px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    resize: none;
+    overflow: auto;
+    margin-bottom: 10px;
 }
-
 button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: absolute; /* Posición absoluta */
+    bottom: 0; /* Posición en la parte inferior */
+}
+.menu {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+.menu:hover {
+    color:red;
+}
+/* Media queries para hacer que el footer y el header se adapten a diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    .menu {
+        padding: 10px;
+    }
+
+    .footer {
+        padding: 10px;
+    }
 }
 
-button:hover {
-  background-color: #0056b3;
-}
+@media (max-width: 480px) {
+    .menu {
+        padding: 5px;
+    }
+
+    .footer {
+        padding: 5px;
+    }
+}  
