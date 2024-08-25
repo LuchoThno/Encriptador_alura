@@ -1,0 +1,62 @@
+const CLAVE = 'abcdefghijklmnopqrstuvwxyz';
+
+const formularioEncriptar = document.getElementById('formulario-encriptar');
+const formularioDesencriptar = document.getElementById('formulario-desencriptar');
+const mensajeEncriptado = document.getElementById('mensaje-encriptado');
+const mensajeDesencriptado = document.getElementById('mensaje-desencriptado');
+
+formularioEncriptar.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const mensaje = document.getElementById('mensaje').value;
+    const mensajeEncriptadoValor = encriptarMensaje(mensaje);
+    mensajeEncriptado.value = mensajeEncriptadoValor;
+});
+
+formularioDesencriptar.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const mensajeEncriptadoValor = document.getElementById('mensaje-encriptado-desencriptar').value;
+    const mensajeDesencriptadoValor = desencriptarMensaje(mensajeEncriptadoValor);
+    mensajeDesencriptado.value = mensajeDesencriptadoValor;
+});
+
+function encriptarMensaje(mensaje) {
+    return mensaje.split('').map(caracter => {
+    const indice = CLAVE.indexOf(caracter.toLowerCase());
+    if (indice !== -1) {
+      return CLAVE[(indice + 3) % 26];
+    } else {
+      return caracter;
+    }
+    }).join('');
+}
+
+function desencriptarMensaje(mensaje) {
+    return mensaje.split('').map(caracter => {
+    const indice = CLAVE.indexOf(caracter.toLowerCase());
+    if (indice !== -1) {
+        return CLAVE[(indice - 3 + 26) % 26];
+    } else {
+        return caracter;
+    }
+    }).join('');
+}
+document.getElementById('copiar-encriptado').addEventListener('click', function() {
+    copiarTexto('mensaje-encriptado');
+});
+
+document.getElementById('copiar-desencriptado').addEventListener('click', function() {
+    copiarTexto('mensaje-desencriptado');
+});
+
+function copiarTexto(idTextarea) {
+    const textarea = document.getElementById(idTextarea);
+    textarea.select();
+    textarea.setSelectionRange(0, 99999); // Para móviles
+
+    try {
+        document.execCommand('copy');
+        alert('Texto copiado al portapapeles');
+    } catch (err) {
+        alert('Error al copiar el texto');
+    }
+}
